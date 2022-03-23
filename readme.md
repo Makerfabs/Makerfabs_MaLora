@@ -47,7 +47,7 @@ Some of them are our previous products, but have not added UID yet. Please refer
 | 00   | [Lora AC Dimmer](https://github.com/Makerfabs/Makerfabs-Lora-AC-Dimmer) | DIMMER   | **Already** |
 | 01   | [Lora Soil Moisture Sensor](https://github.com/Makerfabs/Lora-Soil-Moisture-Sensor/tree/master/V3) | SOIL     | **Already** |
 | 02   | Lora Relay                                                   | RELAY    | Not Ready   |
-| 03   | Lora Relay 4 Channel                                         | RELAY4   | Not Ready   |
+| 03   | [Lora Relay 4 Channel](03RELAY4/readme.md)                 | RELAY4   | Not Ready   |
 | 04   | Lora TDS                                                     | TDS      | Not Ready   |
 | 05   | Lora soil multi element sensor                               | SOIL-PRO | Not Ready   |
 | 06   | Lora- 4 Channel MOSFET Driver                                | MOS4     | Not Ready   |
