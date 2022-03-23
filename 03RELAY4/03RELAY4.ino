@@ -1,5 +1,11 @@
 /*
 
+-----------NOT READY-----------
+
+Author:         Vincent
+Create date:    2022/3/23
+Version:        1.0
+
 Command example:
 
   ACT = 0 Close
@@ -176,10 +182,12 @@ int command_explain(String str)
         {
         case 0:
             Serial.println("ALL CLOSE");
+            relay_control(0000);
             break;
 
         case 1:
             Serial.println("ALL OPEN");
+            relay_control(1111);
             break;
 
         case 2:

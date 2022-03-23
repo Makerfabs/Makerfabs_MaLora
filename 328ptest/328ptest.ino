@@ -1,3 +1,13 @@
+/*
+
+这是基于Maduino Lora Radio的测试程序
+
+Author:         Vincent
+Create date:    2022/3/23
+Version:        1.0
+
+*/
+
 #include <RadioLib.h>
 
 #define DIO0 2
@@ -12,7 +22,7 @@
 #define SPI_MISO 12
 #define SPI_SCK 13
 
-String node_id = String("ID") + "030000";
+String node_id = String("IDXDEBUG");
 int id_number_length = 6;
 String debug_id = "IDXDEBUG";
 
@@ -42,8 +52,7 @@ Frequency hopping: disabled
 #define PREAMBLE_LEN 8
 #define GAIN 0
 
-SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
-//SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
+SX1276 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
 
 void setup()
 {
@@ -71,16 +80,16 @@ void setup()
 
 int index = 0;
 
-void loop()
+void loop_test()
 {
     radio.transmit((String) "ID010123 REPLY : SOIL INEDX:" + index + " H:48.85 T:30.50 ADC:896 BAT:1016");
     delay(5000);
 }
 
-void loop2()
+//
+void loop()
 {
     //Serial.print(F("[SX1278] Waiting for incoming transmission ... "));
-
     String str;
     int state = radio.receive(str);
 
@@ -113,7 +122,7 @@ void loop2()
 
         if (command_explain(str))
         {
-            String back_str = node_id + " REPLY : RELAY4 " + String("STATUS DATA");
+            String back_str = node_id + " REPLY : TEST_NODE " + String("STATUS DATA");
             radio.transmit(back_str);
         }
     }
@@ -139,6 +148,8 @@ void pin_init()
 {
 }
 
+
+//ID001ACT002PARAM001010
 int command_explain(String str)
 {
     //string spilt
@@ -164,7 +175,6 @@ int command_explain(String str)
 
         case 2:
             Serial.println("Control");
-            //dim = node_param % 1000;
             break;
 
         case 114:
