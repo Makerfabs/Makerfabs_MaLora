@@ -13,7 +13,7 @@ Note:
 */
 ```
 
-![main](md_pic/4-Channel Lora Relay-10A_1.jpg)
+![main](md_pic/main.jpg)
 
 [toc]
 
@@ -47,6 +47,18 @@ Wiki Link : [Lora Relay 4Channel](https://www.makerfabs.com/wiki/index.php?title
 * Coil voltage of relay: 5V
 * Switching voltage of relay: (277VAC , 28VDC) Max
 * DC12V or 5V input
+
+
+
+### Front
+
+![front](md_pic/front.jpg)
+
+
+
+![back](md_pic/back.jpg)
+
+
 
  ## Pin OUT
 

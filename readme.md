@@ -26,11 +26,11 @@ Note:
 
 Makerfabs Lora Node is a series of products based on Arduino Pro Mini (328P) + Lora(SX127X). 
 
-Like Relay, AC Dimmer, Mosfet, etc.
+Like Relay, AC Dimmer, MOSFET, etc.
 
-For easy to use, UID and generic instructions are provided.
+For easy to use, UID and generic instructions are provided. Some of them are our previous products, but have not added UID yet. 
 
-Some of them are our previous products, but have not added UID yet. Please refer to status of Lora Node List below.
+Please refer to status of Lora Node List below.
 
 ## Feature
 
@@ -65,18 +65,13 @@ You can also use our other products, or other Lora devices.
 
 # Generic Lora Command
 
-## UID
+## ATTENTION
 
-UID is the factory serial number of manual burning, manual modification when burning, has nothing to do with the equipment.The action continues only when a command with the same device ID is received.
+**Makerfabs products consist only of hardware, not software. The Lora Node instructions are not our product, but are intended as sample code for beginners. It is used to test hardware functions.**
 
-The first two digits indicate the device type number, and the last four digits indicate the serial number.
+**It does not guarantee the security of the code. It can only be used as a reference and cannot provide subsequent software support. Some products involve high voltage and other dangerous functions, please make sure you have enough electrical knowledge.**
 
-```c
-03					0001
-Type:Relay			Serial number:0001
-```
-
-
+**Makerfabs assumes no responsibility for any software errors and any associated problems.**
 
 ## Command
 
@@ -96,17 +91,24 @@ The preceding zeros must not be omitted.
 
 ### Device ID(UID)
 
+UID is the factory serial number of manual burning, manual modification when burning, has nothing to do with the equipment. The action continues only when a command with the same device ID is received.
+
 Generally, the value is ID+6 digits.
 
+The first two digits indicate the device type number, and the last four digits indicate the serial number.
+
 ```
-ID000123
+ID030001
+
+03					0001
+Type:Relay			UID number:0001
 ```
 
 Can be customized by the user, also provided to get the 328P chip UID routines.
 
 ### Action ID
 
-All LoraNode must implement the following two basic commands. (Including read-only terminals)
+All Lora Node must implement the following two basic commands. (Including read-only terminals)
 
 | ACT  | PARAM             | Description                                                  |
 | ---- | ----------------- | ------------------------------------------------------------ |
@@ -114,15 +116,23 @@ All LoraNode must implement the following two basic commands. (Including read-on
 | 000  | 000000(not parse) | All functions are disabled. The read-only terminal does not perform any action, but it is necessary to reply. |
 |      |                   |                                                              |
 
- 
+example：
+
+```c
+ACT = 0 Close
+  ID012345ACT000PARAM000000
+    
+ACT = 114 Query Node Status
+  ID012345ACT114PARAM000000
+```
+
+
 
 ## General Reply
 
-Lora node does not actively upload data to ensure that the channel is smooth. Instead, LoraGetway actively sends commands to control the channel.
+Lora node does not actively upload data to ensure that the channel is smooth. Instead,  Lora Gateway actively sends commands to control the channel.
 
 To facilitate parsing, use string reply.
-
-
 
 The reply format is as follows:
 
@@ -163,7 +173,7 @@ Product link : [CP2104 USB2UART](https://www.makerfabs.com/cp2104-usb-to-serial-
 
 This CP2104 USB to Serial Converter is super tiny, a highly-integrated USB-to-UART Bridge Controller providing a simple solution for updating and programming.
 
-The serial port module has the same pin position as the makerfabs module with no USB port.So just plug it into the hole.
+The serial port module has the same pin position as the makerfabs module with no USB port. So just plug it into the hole.
 
 ![cp2104](md_pic/cp2104-2.png)
 
@@ -171,7 +181,7 @@ The usage of usb cable is the same after that.
 
 ### CP2102 MODULES USB TO TTL
 
-There are many common usb serial port modules on the market, which are basically connected in a common way.
+There are many common USB serial port modules on the market, which are basically connected in a common way.
 
 | Makerfabs | USB To TTL |
 | --------- | ---------- |
