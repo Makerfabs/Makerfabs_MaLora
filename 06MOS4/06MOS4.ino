@@ -39,7 +39,7 @@ Command example:
 #define SPI_MISO 12
 #define SPI_SCK 13
 
-#define MOS_RATIO 50
+#define MOS_RATIO 80
 
 //Mosfet
 int mos_status[4] = {0, 0, 0, 0}; //0 close 8 full open

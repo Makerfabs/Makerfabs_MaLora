@@ -80,14 +80,26 @@ void setup()
 
 int index = 0;
 
-void loop_test()
+void loop()
+{
+    // lora_fake_command();
+    lora_node_general();
+    // lora_fake_reply();
+}
+
+void lora_fake_command()
+{
+    radio.transmit((String) "IDXDEBUGACT001PARAM000000");
+    delay(5000);
+}
+
+void lora_fake_reply()
 {
     radio.transmit((String) "ID010123 REPLY : SOIL INEDX:" + index + " H:48.85 T:30.50 ADC:896 BAT:1016");
     delay(5000);
 }
 
-//
-void loop()
+void lora_node_general()
 {
     //Serial.print(F("[SX1278] Waiting for incoming transmission ... "));
     String str;
@@ -147,7 +159,6 @@ void loop()
 void pin_init()
 {
 }
-
 
 //ID001ACT002PARAM001010
 int command_explain(String str)

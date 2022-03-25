@@ -46,8 +46,8 @@ Please refer to status of Lora Node List below.
 | -1   | NULL                                                         | NULL     |             |
 | 00   | [Lora AC Dimmer](https://github.com/Makerfabs/Makerfabs-Lora-AC-Dimmer) | DIMMER   | **Already** |
 | 01   | [Lora Soil Moisture Sensor](https://github.com/Makerfabs/Lora-Soil-Moisture-Sensor/tree/master/V3) | SOIL     | **Already** |
-| 02   | [Lora Relay](02RELAY/)                                       | RELAY    | Not Ready   |
-| 03   | [Lora Relay 4 Channel](03RELAY4/)                            | RELAY4   | Not Ready   |
+| 02   | [Lora Relay](02RELAY/)                                       | RELAY    | **Already**   |
+| 03   | [Lora Relay 4 Channel](03RELAY4/)                            | RELAY4   | **Already**   |
 | 04   | Lora TDS                                                     | TDS      | Not Ready   |
 | 05   | Lora soil multi element sensor                               | SOIL-PRO | Not Ready   |
 | 06   | [Lora- 4 Channel MOSFET Driver](06MOS4/)                     | MOS4     | Not Ready   |

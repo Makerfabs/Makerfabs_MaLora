@@ -1,7 +1,5 @@
 /*
 
------------NOT READY-----------
-
 Author:         Vincent
 Create date:    2022/3/23
 Version:        1.0
@@ -9,14 +7,14 @@ Version:        1.0
 Command example:
 
   ACT = 0 Close
-    ID001ACT000PARAM000000#
+    ID030001ACT000PARAM000000#
 
   ACT = 1 All Open
-    ID001ACT001PARAM000000#
+    ID030001ACT001PARAM000000#
 
-  ACT = 2 PWM 
+  ACT = 2 Relay Control 
     PARAM = 0000-1111 Relay Status
-    ID001ACT002PARAM001010
+    ID030001ACT002PARAM001010
 
 */
 
@@ -65,7 +63,7 @@ Frequency hopping: disabled
 #define PREAMBLE_LEN 8
 #define GAIN 0
 
-SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
+SX1276 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
 //SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
 int relay_status[4] = {0, 0, 0, 0};
 int relay_pin[4] = {4, 3, A3, A2};
