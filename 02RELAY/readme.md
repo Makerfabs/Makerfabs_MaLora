@@ -91,7 +91,7 @@ Short name: RELAY
 | 114  | 000000(not parse) | Querying node status |
 | 000  | 000000(not parse) | Close all relay      |
 | 001  | 000000(not parse) | Open all relay       |
-| 002  | 00XXXX            | Set 4 channel relay  |
+| 002  | 00X000            | Set 1 channel relay  |
 
 Command example:
 
@@ -103,8 +103,8 @@ ACT = 1 All Open
   ID001ACT001PARAM000000
 
 ACT = 2 Control 
-  PARAM = 0000-1111 Relay Status
-  ID001ACT002PARAM001010
+  PARAM = 0000-1000 Relay Status
+  ID001ACT002PARAM00100
 ```
 
 

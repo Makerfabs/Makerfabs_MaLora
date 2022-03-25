@@ -22,6 +22,8 @@ Version:        1.0
 #define SPI_MISO 12
 #define SPI_SCK 13
 
+#define CYCLE_TIME 5000 //ms
+
 String node_id = String("IDXDEBUG");
 int id_number_length = 6;
 String debug_id = "IDXDEBUG";
@@ -44,7 +46,7 @@ Frequency hopping: disabled
 
 */
 
-#define FREQUENCY 434.0
+#define FREQUENCY 434.0 //433.0 868.0 915.0
 #define BANDWIDTH 125.0
 #define SPREADING_FACTOR 9
 #define CODING_RATE 7
@@ -82,21 +84,29 @@ int index = 0;
 
 void loop()
 {
-    // lora_fake_command();
-    lora_node_general();
+    lora_fake_command();
+    // lora_node_general();
     // lora_fake_reply();
 }
 
 void lora_fake_command()
 {
-    radio.transmit((String) "IDXDEBUGACT001PARAM000000");
-    delay(5000);
+
+    String msg = "IDXDEBUGACT001PARAM000000";
+    Serial.println(msg);
+    radio.transmit(msg);
+    delay(CYCLE_TIME);
+
+    msg = "IDXDEBUGACT000PARAM000000";
+    Serial.println(msg);
+    radio.transmit(msg);
+    delay(CYCLE_TIME);
 }
 
 void lora_fake_reply()
 {
     radio.transmit((String) "ID010123 REPLY : SOIL INEDX:" + index + " H:48.85 T:30.50 ADC:896 BAT:1016");
-    delay(5000);
+    delay(CYCLE_TIME);
 }
 
 void lora_node_general()
