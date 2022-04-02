@@ -111,7 +111,7 @@ Frequency hopping: disabled
 // DIO0 pin:  2
 // RESET pin: 9
 // DIO1 pin:  3
-SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
+SX1276 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
 //SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
 
 // or using RadioShield

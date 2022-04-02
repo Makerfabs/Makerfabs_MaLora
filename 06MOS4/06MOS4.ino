@@ -28,22 +28,22 @@ Command example:
 //UNO pwm 3, 5, 6, 9, 10, 11
 
 #define DIO0 2
-#define DIO1 6
+#define DIO1 A1
 #define DIO2 7
 #define DIO5 8
 
-#define LORA_RST 9
+#define LORA_RST 4
 #define LORA_CS 10
 
 #define SPI_MOSI 11
 #define SPI_MISO 12
 #define SPI_SCK 13
 
-#define MOS_RATIO 80
+#define MOS_RATIO 100
 
 //Mosfet
 int mos_status[4] = {0, 0, 0, 0}; //0 close 8 full open
-int mos_pin[4] = {5, A0, A1, 3};
+int mos_pin[4] = {5, 6, 9, 3};
 int mos_value[9] = {0, 32, 64, 96, 128, 160, 192, 224, 255}; //0% ~ 100%
 
 String type_name = "MOS4";
