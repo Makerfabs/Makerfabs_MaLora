@@ -1,14 +1,16 @@
-# Makerfabs Lora Node
+# Makerfabs MaLora
 
 
 
 ```c++
 /*
-Version:		V1.0
+Version:		V1.1
 Author:			Vincent
 Create Date:	2022/9/28
 Note:
-	
+				V1.0 Create Project
+				V1.1 Add DIMMER and SOIL, change project name to MaLora
+			
 */
 ```
 
@@ -22,7 +24,9 @@ Note:
 
 
 
-# What is Lora Node
+# What is MaLora
+
+**MaLora** is Makerfabs Loranode.
 
 Makerfabs Lora Node is a series of products based on Arduino Pro Mini (328P) + Lora(SX127X). 
 
@@ -44,8 +48,8 @@ Please refer to status of Lora Node List below.
 | NUM  | Type                                                         | Short    | Status      |
 | ---- | ------------------------------------------------------------ | -------- | ----------- |
 | -1   | NULL                                                         | NULL     |             |
-| 00   | [Lora AC Dimmer](https://github.com/Makerfabs/Makerfabs-Lora-AC-Dimmer) | DIMMER   | **Already** |
-| 01   | [Lora Soil Moisture Sensor](https://github.com/Makerfabs/Lora-Soil-Moisture-Sensor/tree/master/V3) | SOIL     | **Already** |
+| 00   | [Lora AC Dimmer](00DIMMER) | DIMMER   | **Already** |
+| 01   | [Lora Soil Moisture Sensor](01SOIL/) | SOIL     | **Already** |
 | 02   | [Lora Relay](02RELAY/)                                       | RELAY    | **Already**   |
 | 03   | [Lora Relay 4 Channel](03RELAY4/)                            | RELAY4   | **Already**   |
 | 04   | Lora TDS                                                     | TDS      | Not Ready   |
