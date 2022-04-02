@@ -27,7 +27,7 @@ String debug_id = "IDXDEBUG";
 #define PREAMBLE_LEN 8
 #define GAIN 0
 
-SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
+SX1276 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
 
 #define TdsSensorPin A0
 #define VREF 3.3          // analog reference voltage(Volt) of the ADC

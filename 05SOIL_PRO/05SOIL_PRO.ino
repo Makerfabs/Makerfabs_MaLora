@@ -42,7 +42,7 @@ String debug_id = "IDXDEBUG";
 HardwareSerial MySerial(1);
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
+SX1276 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
 
 unsigned char testcode[8] = {0X01, 0X03, 0X00, 0X00, 0X00, 0X04, 0X44, 0X09};
 unsigned char responsecode[13] = {};

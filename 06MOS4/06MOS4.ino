@@ -75,7 +75,7 @@ String debug_id = "IDXDEBUG";
 #define PREAMBLE_LEN 8
 #define GAIN 0
 
-SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
+SX1276 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
 //SX1278 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1, SPI, SPISettings());
 
 void setup()
