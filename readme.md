@@ -156,8 +156,10 @@ Spaces cannot be omitted.
 
 - Please disconnect from the electrical equipment before burning!
 - Do not burn with alternating current!
-- Install library: RadioLib and other libs.
+- Install library: RadioLib and other libs in Arduino IDE
 - Upload codes, select "Arduino Pro or Pro Mini" and "3.3V 8MHz"
+
+All Lora Nodes use this Lora library: [RadioLib](https://github.com/jgromes/RadioLib)
 
 
 
