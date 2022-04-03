@@ -5,10 +5,11 @@
 
 ```
 /*
-Version:		V1.0
+Version:		V1.2
 Author:			Vincent
 Create Date:	2022/3/24
 Note:
+				2022/4/2	V1.2: Change feature describes.
 				2022/4/2	V1.1: Fix readme bug, fix code pin
 */
 ```
@@ -41,11 +42,9 @@ Wiki Link : []()
 * Flash:32Kbytes
 * RAM: 2KBytes
 * EEPROM: 1Kbytes
-* Rated current of relay contact: 10A ???
-* Coil type of relay: Non Latching
-* Coil voltage of relay: 5V
-* Switching voltage of relay: (277VAC , 28VDC) Max ???
-* DC12V input
+* Maximum current: 2A
+* Input Voltage: 5~27V DC
+* Onboard opticalcoupler*4
 
 
 
