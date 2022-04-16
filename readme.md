@@ -4,12 +4,13 @@
 
 ```c++
 /*
-Version:		V1.1
+Version:		V1.2
 Author:			Vincent
 Create Date:	2022/9/28
 Note:
 				V1.0 Create Project
 				V1.1 Add DIMMER and SOIL, change project name to MaLora
+				V1.2 Added description of applicable version of RadioLib library.
 			
 */
 ```
@@ -160,6 +161,10 @@ Spaces cannot be omitted.
 - Upload codes, select "Arduino Pro or Pro Mini" and "3.3V 8MHz"
 
 All Lora Nodes use this Lora library: [RadioLib](https://github.com/jgromes/RadioLib)
+
+**It is recommended to install from Arduino Library Manager and select the library version 4.6.0. RadioLib libraries after 5.0 need to add "RADIOLIB_" before some macro definitions.**
+
+The current firmware is developed in RadioLib 4.6.0.
 
 
 
