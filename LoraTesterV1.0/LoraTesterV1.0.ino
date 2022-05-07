@@ -22,7 +22,7 @@ Version:        1.0
 #define SPI_MISO 12
 #define SPI_SCK 13
 
-#define CYCLE_TIME 5000 //ms
+#define CYCLE_TIME 5000 // ms
 
 String node_id = String("IDXDEBUG");
 int id_number_length = 6;
@@ -46,7 +46,7 @@ Frequency hopping: disabled
 
 */
 
-#define FREQUENCY 434.0 //433.0 868.0 915.0
+#define FREQUENCY 434.0 // 433.0 868.0 915.0
 #define BANDWIDTH 125.0
 #define SPREADING_FACTOR 9
 #define CODING_RATE 7
@@ -84,7 +84,8 @@ int index = 0;
 
 void loop()
 {
-    lora_fake_command();
+    // lora_fake_command();
+    lora_fake_command2();
     // lora_node_general();
     // lora_fake_reply();
 }
@@ -103,6 +104,25 @@ void lora_fake_command()
     delay(CYCLE_TIME);
 }
 
+void lora_fake_command2()
+{
+
+    String msg = "IDXDEBUGACT002PARAM008888";
+    Serial.println(msg);
+    radio.transmit(msg);
+    delay(CYCLE_TIME);
+
+    msg = "IDXDEBUGACT002PARAM003333";
+    Serial.println(msg);
+    radio.transmit(msg);
+    delay(CYCLE_TIME);
+
+    msg = "IDXDEBUGACT002PARAM000000";
+    Serial.println(msg);
+    radio.transmit(msg);
+    delay(CYCLE_TIME);
+}
+
 void lora_fake_reply()
 {
     radio.transmit((String) "ID010123 REPLY : SOIL INEDX:" + index + " H:48.85 T:30.50 ADC:896 BAT:1016");
@@ -111,7 +131,7 @@ void lora_fake_reply()
 
 void lora_node_general()
 {
-    //Serial.print(F("[SX1278] Waiting for incoming transmission ... "));
+    // Serial.print(F("[SX1278] Waiting for incoming transmission ... "));
     String str;
     int state = radio.receive(str);
 
@@ -151,7 +171,7 @@ void lora_node_general()
     else if (state == ERR_RX_TIMEOUT)
     {
         // timeout occurred while waiting for a packet
-        //Serial.println(F("timeout!"));
+        // Serial.println(F("timeout!"));
     }
     else if (state == ERR_CRC_MISMATCH)
     {
@@ -170,14 +190,14 @@ void pin_init()
 {
 }
 
-//ID001ACT002PARAM001010
+// ID001ACT002PARAM001010
 int command_explain(String str)
 {
-    //string spilt
+    // string spilt
     String txt = str;
     if (txt.startsWith(node_id) || txt.startsWith(debug_id))
     {
-        //int node_id = (txt.substring(2, 5)).toInt();
+        // int node_id = (txt.substring(2, 5)).toInt();
         long node_act = txt.substring(id_number_length + 5, id_number_length + 8).toInt();
         int node_param = txt.substring(id_number_length + 14, id_number_length + 20).toInt();
 

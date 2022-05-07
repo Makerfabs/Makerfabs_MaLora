@@ -144,6 +144,7 @@ void loop()
             sprintf(reply_cstr, "%04d", get_mos_status());
             String back_str = node_id + " REPLY : " + type_name + " " + reply_cstr;
             radio.transmit(back_str);
+            Serial.println(back_str);
         }
     }
     else if (state == ERR_RX_TIMEOUT)

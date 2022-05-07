@@ -133,6 +133,7 @@ void loop()
             char reply_cstr[20];
             sprintf(reply_cstr, "%04d", get_relay_status());
             String back_str = node_id + " REPLY : RELAY4 " + reply_cstr;
+            Serial.println(back_str);
             radio.transmit(back_str);
         }
     }
