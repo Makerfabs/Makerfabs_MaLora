@@ -4,7 +4,9 @@
 
 Author:         Vincent
 Create date:    2022/3/23
-Version:        1.0
+Version:        1.1
+
+                V1.1: Added test program to send instructions and display back to serial port.
 
 */
 
@@ -54,6 +56,12 @@ Frequency hopping: disabled
 #define PREAMBLE_LEN 8
 #define GAIN 0
 
+String command_text[4] = {"IDXDEBUGACT001PARAM000000#",
+                          "IDXDEBUGACT000PARAM000000#",
+                          "IDXDEBUGACT001PARAM000000#",
+                          "IDXDEBUGACT000PARAM000000#"};
+int count = 0;
+
 SX1276 radio = new Module(LORA_CS, DIO0, LORA_RST, DIO1);
 
 void setup()
@@ -85,9 +93,11 @@ int index = 0;
 void loop()
 {
     // lora_fake_command();
-    lora_fake_command2();
+    // lora_fake_command2();
     // lora_node_general();
     // lora_fake_reply();
+
+    lora_send_and_receive();
 }
 
 void lora_fake_command()
@@ -184,6 +194,92 @@ void lora_node_general()
         Serial.print(F("failed, code "));
         Serial.println(state);
     }
+}
+
+void lora_send_and_receive()
+{
+    Serial.print(F("[SX1278] Transmitting packet ... "));
+
+    Serial.print("          " + command_text[count % 4]);
+
+    int state = radio.transmit(command_text[count++ % 4]);
+
+    if (state == ERR_NONE)
+    {
+        // the packet was successfully transmitted
+        Serial.println(F(" success!"));
+
+        // print measured data rate
+        Serial.print(F("[SX1278] Datarate:\t"));
+        Serial.print(radio.getDataRate());
+        Serial.println(F(" bps"));
+    }
+    else if (state == ERR_PACKET_TOO_LONG)
+    {
+        // the supplied packet was longer than 256 bytes
+        Serial.println(F("too long!"));
+    }
+    else if (state == ERR_TX_TIMEOUT)
+    {
+        // timeout occurred while transmitting packet
+        Serial.println(F("timeout!"));
+    }
+    else
+    {
+        // some other error occurred
+        Serial.print(F("failed, code "));
+        Serial.println(state);
+    }
+
+    String str;
+    state = radio.receive(str);
+
+    if (state == ERR_NONE)
+    {
+        // packet was successfully received
+        Serial.println(F("success!"));
+
+        // print the data of the packet
+        Serial.print(F("[SX1278] Data:\t\t\t"));
+        Serial.println(str);
+
+        // print the RSSI (Received Signal Strength Indicator)
+        // of the last received packet
+        Serial.print(F("[SX1278] RSSI:\t\t\t"));
+        Serial.print(radio.getRSSI());
+        Serial.println(F(" dBm"));
+
+        // print the SNR (Signal-to-Noise Ratio)
+        // of the last received packet
+        Serial.print(F("[SX1278] SNR:\t\t\t"));
+        Serial.print(radio.getSNR());
+        Serial.println(F(" dB"));
+
+        // print frequency error
+        // of the last received packet
+        Serial.print(F("[SX1278] Frequency error:\t"));
+        Serial.print(radio.getFrequencyError());
+        Serial.println(F(" Hz"));
+    }
+    else if (state == ERR_RX_TIMEOUT)
+    {
+        // timeout occurred while waiting for a packet
+        // Serial.println(F("timeout!"));
+    }
+    else if (state == ERR_CRC_MISMATCH)
+    {
+        // packet was received, but is malformed
+        Serial.println(F("CRC error!"));
+    }
+    else
+    {
+        // some other error occurred
+        Serial.print(F("failed, code "));
+        Serial.println(state);
+    }
+
+    // wait for a second before transmitting again
+    delay(3000);
 }
 
 void pin_init()
