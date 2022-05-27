@@ -55,7 +55,7 @@ Please refer to status of Lora Node List below.
 | 03   | [Lora Relay 4 Channel](03RELAY4/)                            | RELAY4   | **Already**   |
 | 04   | Lora TDS                                                     | TDS      | Not Ready   |
 | 05   | Lora soil multi element sensor                               | SOIL-PRO | Not Ready   |
-| 06   | [Lora- 4 Channel MOSFET Driver](06MOS4/)                     | MOS4     | Not Ready   |
+| 06   | [Lora- 4 Channel MOSFET Driver](06MOS4/)                     | MOS4     | **Already** |
 |      |                                                              |          |             |
 
 ## Transmission Device

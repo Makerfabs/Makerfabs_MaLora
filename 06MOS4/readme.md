@@ -30,7 +30,7 @@ Note:
 
 4-Channel Lora MOSFET based on the Arduino, users can program it with Arduino IDE, which is very easy especially suit for the none-programmers. There are also guide for users to learn how to create the first IoT project with this board, with which the starters can learn the hardware and programming skill quickly. 
 
-Product Link ：[]()
+Product Link ：[Lora - 4 Channel MOSFET Driver](https://www.makerfabs.com/index.php?route=journal2/quickview&pid=725)
 
 Wiki Link : []()
 
