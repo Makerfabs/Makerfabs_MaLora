@@ -48,8 +48,8 @@ Please refer to status of Lora Node List below.
 
 | NUM  | Type                                                         | Short    | Status      |
 | ---- | ------------------------------------------------------------ | -------- | ----------- |
-| -1   | NULL                                                         | NULL     |             |
-| 00   | [Lora AC Dimmer](00DIMMER) | DIMMER   | **Already** |
+| NULL | [Maduino Lora Radio](MaduinoLoraRadio/)                                      | NULL     | Not Ready |
+| 00   | [Lora AC Dimmer](00DIMMER/) | DIMMER   | **Already** |
 | 01   | [Lora Soil Moisture Sensor](01SOIL/) | SOIL     | **Already** |
 | 02   | [Lora Relay](02RELAY/)                                       | RELAY    | **Already**   |
 | 03   | [Lora Relay 4 Channel](03RELAY4/)                            | RELAY4   | **Already**   |
