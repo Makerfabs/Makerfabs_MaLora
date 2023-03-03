@@ -49,7 +49,7 @@ Frequency hopping: disabled
 
 */
 
-#define FREQUENCY 434.0 // 433.0 868.0 915.0
+#define FREQUENCY 868.0 // 433.0 868.0 915.0
 #define BANDWIDTH 125.0
 #define SPREADING_FACTOR 9
 #define CODING_RATE 7
@@ -165,6 +165,8 @@ void lora_node_general()
         if (command_explain(str))
         {
             String back_str = node_id + " MALORA : TEST_NODE " + String("STATUS DATA");
+            Serial.print("Reply:");
+            Serial.println(back_str);
             radio.transmit(back_str);
         }
     }
