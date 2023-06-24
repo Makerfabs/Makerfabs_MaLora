@@ -21,7 +21,7 @@ Note:
 
 [Makerfabs home page](https://www.makerfabs.com/)
 
-[Makerfabs Wiki](https://makerfabs.com/wiki/index.php?title=Main_Page)
+[Makerfabs Wiki](https://wiki.makerfabs.com/)
 
 
 
@@ -64,7 +64,7 @@ You can use a Lora Node as the sending device.
 
 You can also use our other products, or other Lora devices.
 
-- [Maduino Lora Radio](https://www.makerfabs.com/wiki/index.php?title=Maduino_Lora_Radio_(433M/868M))
+- [Maduino Lora Radio](https://wiki.makerfabs.com/Maduino_LoRa_Radio.html)
 
 
 
